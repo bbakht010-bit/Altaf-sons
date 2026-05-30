@@ -1,8 +1,16 @@
 ---
 import { site } from "../data/site";
+
+const isExternalWhatsApp = site.whatsappHref.startsWith("http");
 ---
 
-<a class="floating-whatsapp" href={site.whatsappHref} aria-label="Contact Altaf & Sons on WhatsApp">
+<a
+  class="floating-whatsapp"
+  href={site.whatsappHref}
+  target={isExternalWhatsApp ? "_blank" : undefined}
+  rel={isExternalWhatsApp ? "noopener noreferrer" : undefined}
+  aria-label="Contact Altaf & Sons on WhatsApp"
+>
   <span aria-hidden="true">WA</span>
-  <strong>WhatsApp</strong>
+  <strong>Get Quote</strong>
 </a>

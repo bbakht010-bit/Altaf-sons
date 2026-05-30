@@ -13,21 +13,21 @@ import { projects, sectors } from "../data/site";
   <PageHero
     eyebrow="Projects and experience"
     title="Project profiles for supply, procurement, and delivery work."
-    body="These visual cards are ready for approved photos, contract references, delivery records, and final project descriptions."
+    body="A simple overview of the type of supply and delivery work Altaf & Sons supports."
   />
 
   <section class="section">
     <div class="container">
       <SectionHeading
         eyebrow="Representative work"
-        title="Impact cards for the first visual prototype."
-        body="The layout is designed to showcase humanitarian relief goods, institutional supplies, textile orders, and field delivery coordination."
+        title="Work categories for humanitarian and institutional supply."
+        body="Approved project photos and client references can be added when they are cleared for public display."
       />
       <div class="impact-grid">
         {
           projects.map((project) => (
             <article class="placeholder-card">
-              <div class="image-placeholder">Project photo pending</div>
+              <div class="image-placeholder">{project.title}</div>
               <div>
                 <small>{project.client}</small>
                 <h3>{project.title}</h3>
@@ -57,8 +57,8 @@ import { projects, sectors } from "../data/site";
 
   <section class="section">
     <div class="container statement-card">
-      <p class="eyebrow">Gallery ready</p>
-      <h2>Add approved photos when available.</h2>
+      <p class="eyebrow">Project proof</p>
+      <h2>Approved photos make this page stronger.</h2>
       <p>
         This page links naturally with the gallery page so clients can review supplies, packing, dispatch, and delivery
         handover visuals after the company provides approved images.

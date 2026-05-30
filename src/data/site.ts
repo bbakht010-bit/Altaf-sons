@@ -1,34 +1,32 @@
 export const site = {
   name: "Altaf & Sons",
   tagline: "Reliable Procurement & Timely Delivery for Humanitarian Aid & General Supplies",
+  logoSrc: "/altaf-and-sons-logo-clean.png",
   shortDescription:
     "A Lahore-based general order supplier and humanitarian aid procurement company serving NGOs, international firms, government departments, and institutional project teams.",
   url: "https://altaf-and-sons.pages.dev",
   email: "altafsons97@gmail.com",
-  businessPhone: "Business phone to be confirmed",
-  whatsappLabel: "Business WhatsApp to be confirmed",
+  businessPhone: "",
+  whatsappLabel: "WhatsApp",
   whatsappHref: "/contact/",
   location: "Lahore, Pakistan",
   address: "Lahore, Pakistan - complete office address to be added",
   analyticsId: "",
   nav: [
     { label: "Home", href: "/" },
-    { label: "About", href: "/about/" },
     { label: "Services", href: "/services/" },
-    { label: "Partners", href: "/partners/" },
     { label: "Projects", href: "/projects/" },
-    { label: "Gallery", href: "/gallery/" },
     { label: "Contact", href: "/contact/" },
   ],
 };
 
 export const hero = {
   eyebrow: "General order supplier and humanitarian aid procurement company",
-  title: "Reliable Partner in Humanitarian Aid & General Order Supplies",
+  title: "Procurement made simple for serious supply needs.",
   body:
-    "Procurement, sourcing, and timely delivery for United Nations agencies, NDMA, Pakistan Army, humanitarian organizations, government departments, and institutional clients.",
+    "Altaf & Sons helps organizations source, quote, and deliver humanitarian aid items, textiles, stationery, and general order supplies across Pakistan.",
   primaryCta: { label: "Request a Quote", href: "/contact/" },
-  secondaryCta: { label: "Explore Our Supplies", href: "/services/" },
+  secondaryCta: { label: "View Services", href: "/services/" },
 };
 
 export const stats = [
@@ -147,7 +145,7 @@ export const projects = [
     title: "Relief Goods Procurement",
     client: "Humanitarian aid program",
     summary:
-      "Supply-ready prototype profile for tents, blankets, food packs, hygiene kits, and other relief requirements.",
+      "Procurement support for tents, blankets, food packs, hygiene kits, and other relief requirements.",
   },
   {
     title: "Institutional General Order Supply",
@@ -159,7 +157,7 @@ export const projects = [
     title: "Textile and Uniform Supply",
     client: "Program or institutional client",
     summary:
-      "Placeholder impact card for uniforms, bedding textiles, and custom bulk textile procurement.",
+      "Supply support for uniforms, bedding textiles, and custom bulk textile procurement.",
   },
   {
     title: "Field Delivery Coordination",
@@ -180,10 +178,9 @@ export const galleryItems = [
 
 export const contact = {
   intro:
-    "Share your product list, service category, quantities, delivery location, and timeline. Altaf & Sons will respond through official company channels.",
+    "Share your product list, quantities, delivery city, and deadline. Altaf & Sons will respond through official company channels.",
   methods: [
     { label: "Official Email", value: site.email, href: `mailto:${site.email}` },
-    { label: "Business Phone", value: site.businessPhone, href: "/contact/" },
     { label: "Office Location", value: site.location, href: "/contact/" },
   ],
 };

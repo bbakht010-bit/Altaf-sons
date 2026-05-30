@@ -24,8 +24,8 @@ import { hero, partners, projects, services, site, stats, whyChoose } from "../d
 
       <div class="hero-card" aria-label="Company capability summary">
         <div class="hero-card-top">
-          <span>Altaf & Sons</span>
-          <strong>Supply Chain Ready</strong>
+          <img class="hero-logo" src={site.logoSrc} alt={`${site.name} logo`} />
+          <strong>General Order Suppliers</strong>
         </div>
         <ul>
           <li>Humanitarian aid and relief item procurement</li>
@@ -73,8 +73,8 @@ import { hero, partners, projects, services, site, stats, whyChoose } from "../d
       <div class="prose-card">
         <p>
           The company supports project teams that need organized sourcing, practical availability checks, and clear
-          delivery coordination. This prototype is ready for final images, approved logos, certifications, and office
-          details when you provide them.
+          delivery coordination. Send the required products, quantities, city, and deadline to receive a practical quote
+          through official company channels.
         </p>
       </div>
     </div>
@@ -85,7 +85,7 @@ import { hero, partners, projects, services, site, stats, whyChoose } from "../d
       <SectionHeading
         eyebrow="Our expertise"
         title="Supplies for humanitarian, government, and institutional needs."
-        body="Each category is structured so exact products, photos, quantities, and supplier documentation can be added later."
+        body="Clear categories help clients quickly understand what Altaf & Sons can source and deliver."
       />
       <div class="card-grid two-column">
         {services.map((service) => <ServiceCard {...service} />)}
@@ -98,7 +98,7 @@ import { hero, partners, projects, services, site, stats, whyChoose } from "../d
       <SectionHeading
         eyebrow="Esteemed partners and clients"
         title="Built for formal procurement environments."
-        body="Official logo files can replace these professional text cards before launch."
+        body="Approved agency logos and client permissions can be added here when available."
       />
       <div class="logo-grid">
         {
@@ -137,14 +137,14 @@ import { hero, partners, projects, services, site, stats, whyChoose } from "../d
     <div class="container">
       <SectionHeading
         eyebrow="Recent projects and impact"
-        title="A gallery-ready section for supply and delivery work."
-        body="Photos can be added to these cards when the company provides approved project images."
+        title="Supply and delivery work organized for quick review."
+        body="Use this section to highlight real project photos, delivery records, and approved client references."
       />
       <div class="impact-grid">
         {
           projects.slice(0, 3).map((project) => (
             <article class="placeholder-card">
-              <div class="image-placeholder">Image pending</div>
+              <div class="image-placeholder">{project.title}</div>
               <div>
                 <small>{project.client}</small>
                 <h3>{project.title}</h3>

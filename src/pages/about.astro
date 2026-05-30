@@ -64,13 +64,13 @@ import { leadership, site, values } from "../data/site";
       <SectionHeading
         eyebrow="Leadership"
         title="A role-based leadership structure for client confidence."
-        body="No individual personal contact numbers are shown publicly. Final approved names and photos can be added later if the company wants them published."
+        body="Company leadership can be presented with approved names and photos when the business wants them shown publicly."
       />
       <div class="leader-grid">
         {
           leadership.map((member) => (
             <article class="leader-card">
-              <div class="image-placeholder">Photo pending</div>
+              <img class="leader-logo" src={site.logoSrc} alt="" aria-hidden="true" />
               <h3>{member.role}</h3>
               <p>{member.body}</p>
             </article>

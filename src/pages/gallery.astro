@@ -8,7 +8,7 @@ import { galleryItems } from "../data/site";
 
 <BaseLayout
   title="Gallery"
-  description="Project gallery placeholders for Altaf & Sons supplies, relief items, warehouse preparation, dispatch, and delivery handover photos."
+  description="Project gallery for Altaf & Sons supplies, relief items, warehouse preparation, dispatch, and delivery handover photos."
 >
   <PageHero
     eyebrow="Projects gallery"
@@ -20,14 +20,14 @@ import { galleryItems } from "../data/site";
     <div class="container">
       <SectionHeading
         eyebrow="Photo gallery"
-        title="Image placeholders ready for your project photos."
-        body="Each card can be replaced with a real photo later. The current prototype keeps the page polished without using unapproved imagery."
+        title="Organized gallery categories for approved project photos."
+        body="Use real company photos here when they are approved for public display."
       />
       <div class="gallery-grid">
         {
           galleryItems.map((item, index) => (
             <a class="gallery-card" href={`#gallery-${index + 1}`}>
-              <div class="image-placeholder">Photo {index + 1}</div>
+              <div class="image-placeholder">{item.category}</div>
               <div>
                 <small>{item.category}</small>
                 <h3>{item.title}</h3>

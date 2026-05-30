@@ -8,10 +8,10 @@ const isActive = (href: string) => (href === "/" ? currentPath === "/" : current
 <header class="site-header">
   <div class="container header-inner">
     <a class="brand" href="/" aria-label={`${site.name} home`}>
-      <span class="brand-mark" aria-hidden="true">A&S</span>
+      <img class="brand-logo" src={site.logoSrc} alt="" aria-hidden="true" />
       <span>
         <strong>{site.name}</strong>
-        <small>Procurement & aid supplies</small>
+        <small>General order suppliers</small>
       </span>
     </a>
 
@@ -25,7 +25,7 @@ const isActive = (href: string) => (href === "/" ? currentPath === "/" : current
       }
     </nav>
 
-    <a class="header-cta" href="/contact/">Request Quote</a>
+    <a class="header-cta" href="/contact/">Get Quote</a>
 
     <details class="mobile-menu">
       <summary aria-label="Open navigation menu">Menu</summary>

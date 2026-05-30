@@ -21,7 +21,7 @@ import { contact, site } from "../data/site";
         <SectionHeading
           eyebrow="Get in touch"
           title="Share the details needed for a clear quotation."
-          body="This form uses browser validation and official company contact details only. A live message service can be connected later using private dashboard settings."
+          body="For the fastest reply, include the product list, quantity, delivery city, and deadline."
         />
 
         <div class="contact-methods">
@@ -36,7 +36,13 @@ import { contact, site } from "../data/site";
         </div>
       </div>
 
-      <form class="contact-form" name="request" method="post" action={`mailto:${site.email}`}>
+      <form
+        class="contact-form"
+        name="request"
+        method="post"
+        action={`mailto:${site.email}?subject=Quote%20Request%20for%20Altaf%20%26%20Sons`}
+        enctype="text/plain"
+      >
         <label>
           Full name
           <input type="text" name="name" placeholder="Your name" required />
@@ -58,12 +64,13 @@ import { contact, site } from "../data/site";
           <textarea
             name="message"
             rows="6"
-            placeholder="Tell us about the products, services, delivery location, and timeline."
+            placeholder="Example: 500 hygiene kits, Lahore delivery, needed by 15 June."
             required></textarea>
         </label>
-        <button class="button primary" type="submit">Send Inquiry</button>
+        <button class="button primary" type="submit">Send Quote Request</button>
         <p class="form-note">
-          Privacy note: no individual personal phone numbers or private credentials are published on this website.
+          Your request opens your email app and is addressed to {site.email}. WhatsApp can be connected as soon as the
+          official business number is provided.
         </p>
       </form>
     </div>
@@ -73,9 +80,9 @@ import { contact, site } from "../data/site";
     <div class="container split-grid">
       <div>
         <SectionHeading
-          eyebrow="Office address"
-          title="Lahore, Pakistan"
-          body={site.address}
+          eyebrow="Office location"
+          title="Based in Lahore, Pakistan"
+          body="Add the complete office address or Google Maps link here when it is approved for public display."
         />
         <div class="domain-list">
           <span>altafandsons.com</span>
@@ -85,8 +92,8 @@ import { contact, site } from "../data/site";
       </div>
       <div class="map-placeholder">
         <div>
-          <h3>Google Map Embed Pending</h3>
-          <p>Provide the complete office address or Google Maps link to embed the final map here.</p>
+          <h3>Lahore Service Base</h3>
+          <p>Share the approved office address or Google Maps link when you want the public map added.</p>
         </div>
       </div>
     </div>
