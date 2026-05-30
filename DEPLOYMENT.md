@@ -69,6 +69,21 @@ Replace `YOUR_GITHUB_REPOSITORY_URL` with the repository URL from GitHub.
 
 Cloudflare will install dependencies and deploy the website.
 
+Important: do not set the Cloudflare deploy command to `npx wrangler deploy` for this website. This is a static Astro site for Cloudflare Pages, so Wrangler may try to convert it into a Worker, add the Cloudflare adapter, and create KV bindings that are not needed.
+
+If Cloudflare shows a separate deploy command field, leave it empty. The only command needed is the build command:
+
+```bash
+npm run build
+```
+
+If you want to deploy manually with Wrangler later, use Cloudflare Pages deployment instead of Worker deployment:
+
+```bash
+npm run build
+npx wrangler pages deploy dist --project-name=altaf-sons
+```
+
 ## 6. Before launch
 
 Replace placeholder content in `src/data/site.ts`:
