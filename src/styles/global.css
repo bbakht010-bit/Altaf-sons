@@ -621,6 +621,48 @@ button {
   margin-top: 4px;
 }
 
+.keyword-panel,
+.keyword-strip,
+.tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.keyword-panel {
+  align-content: center;
+  padding: 28px;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-lg);
+  background: #ffffff;
+  box-shadow: 0 18px 42px rgba(0, 48, 135, 0.05);
+}
+
+.keyword-panel span,
+.keyword-strip span,
+.tag-row span {
+  border: 1px solid var(--color-line);
+  border-radius: 999px;
+  background: var(--color-soft);
+  color: var(--color-primary);
+  font-weight: 800;
+}
+
+.keyword-panel span {
+  padding: 12px 16px;
+}
+
+.keyword-strip span,
+.tag-row span {
+  padding: 7px 10px;
+  font-size: 0.78rem;
+}
+
+.keyword-strip.center {
+  justify-content: center;
+  margin-top: 22px;
+}
+
 .text-link {
   display: inline-flex;
   margin-top: 16px;
@@ -904,6 +946,10 @@ button {
   font-weight: 900;
 }
 
+.trust-inner .keyword-strip {
+  justify-content: flex-end;
+}
+
 .logo-grid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
@@ -921,6 +967,15 @@ button {
 
 .logo-card.with-logo {
   justify-items: start;
+}
+
+.compact-logo-card {
+  min-height: 136px;
+  padding: 18px;
+}
+
+.compact-logo-card h3 {
+  font-size: 1rem;
 }
 
 .partner-logo {
@@ -941,6 +996,31 @@ button {
 
 .trust-logo-grid .partner-logo {
   max-height: 58px;
+}
+
+.partner-groups {
+  display: grid;
+  grid-template-columns: 0.85fr 1.35fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.partner-group-card {
+  padding: 22px;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.86);
+  box-shadow: 0 18px 42px rgba(0, 48, 135, 0.05);
+}
+
+.mini-logo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.partner-group-card:first-child .mini-logo-grid {
+  grid-template-columns: 1fr;
 }
 
 .logo-mark {
@@ -1122,6 +1202,7 @@ button {
   .project-grid,
   .timeline,
   .logo-grid,
+  .partner-groups,
   .why-grid,
   .impact-grid,
   .leader-grid,
@@ -1140,6 +1221,15 @@ button {
 
   .hero-section.full-screen {
     min-height: auto;
+  }
+
+  .trust-inner .keyword-strip {
+    justify-content: flex-start;
+  }
+
+  .mini-logo-grid,
+  .partner-group-card:first-child .mini-logo-grid {
+    grid-template-columns: 1fr;
   }
 }
 

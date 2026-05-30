@@ -3,7 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import CTA from "../components/CTA.astro";
 import PageHero from "../components/PageHero.astro";
 import SectionHeading from "../components/SectionHeading.astro";
-import { partners } from "../data/site";
+import { otherPartners, unPartners } from "../data/site";
 ---
 
 <BaseLayout
@@ -12,27 +12,46 @@ import { partners } from "../data/site";
 >
   <PageHero
     eyebrow="Partners and clients"
-    title="Trusted by formal procurement and humanitarian environments."
-    body="Altaf & Sons supports procurement environments connected with UN agencies, NDMA, Pakistan Army, humanitarian organizations, government departments, and institutional clients."
+    title="Partner logos grouped for quick credibility."
+    body="UN-affiliated agencies on one side. Humanitarian, government, and institutional partners on the other."
   />
 
   <section class="section">
     <div class="container">
       <SectionHeading
         eyebrow="Esteemed partners"
-        title="Organizations and sectors we support."
-        body="A clear partner and client display for humanitarian, disaster management, government, and institutional procurement credibility."
+        title="Simple, visual, and easy to scan."
+        body="Short keyword tags keep the page clean while the logos build trust."
       />
-      <div class="logo-grid">
-        {
-          partners.map((partner) => (
-            <article class={`logo-card${partner.logoSrc ? " with-logo" : ""}`}>
-              {partner.logoSrc ? <img class="partner-logo" src={partner.logoSrc} alt={`${partner.name} logo`} /> : <span class="logo-mark">{partner.shortName}</span>}
-              <h3>{partner.name}</h3>
-              <small>{partner.type}</small>
-            </article>
-          ))
-        }
+      <div class="partner-groups">
+        <section class="partner-group-card">
+          <p class="eyebrow">UN-affiliated</p>
+          <div class="mini-logo-grid">
+            {
+              unPartners.map((partner) => (
+                <article class="logo-card with-logo compact-logo-card">
+                  <img class="partner-logo" src={partner.logoSrc} alt={`${partner.name} logo`} />
+                  <h3>{partner.name}</h3>
+                  <div class="tag-row">{partner.keywords.map((keyword) => <span>{keyword}</span>)}</div>
+                </article>
+              ))
+            }
+          </div>
+        </section>
+        <section class="partner-group-card">
+          <p class="eyebrow">Humanitarian / government</p>
+          <div class="mini-logo-grid">
+            {
+              otherPartners.map((partner) => (
+                <article class={`logo-card compact-logo-card${partner.logoSrc ? " with-logo" : ""}`}>
+                  {partner.logoSrc ? <img class="partner-logo" src={partner.logoSrc} alt={`${partner.name} logo`} /> : <span class="logo-mark">{partner.shortName}</span>}
+                  <h3>{partner.name}</h3>
+                  <div class="tag-row">{partner.keywords.map((keyword) => <span>{keyword}</span>)}</div>
+                </article>
+              ))
+            }
+          </div>
+        </section>
       </div>
     </div>
   </section>
@@ -41,10 +60,12 @@ import { partners } from "../data/site";
     <div class="container statement-card">
       <p class="eyebrow">Trust and documentation</p>
       <h2>Built for formal procurement requirements.</h2>
-      <p>
-        The company can support client review with supplier registration documents, project references, quotations,
-        and delivery coordination details where required.
-      </p>
+      <div class="keyword-strip center">
+        <span>Supplier documents</span>
+        <span>Project references</span>
+        <span>Quotations</span>
+        <span>Delivery coordination</span>
+      </div>
     </div>
   </section>
 

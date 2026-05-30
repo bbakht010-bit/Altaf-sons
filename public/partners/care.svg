@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 430 150" role="img" aria-label="CARE logo">
+  <rect width="430" height="150" fill="#ffffff"/>
+  <g fill="#e87420">
+    <circle cx="68" cy="75" r="54"/>
+    <circle cx="68" cy="75" r="32" fill="#ffffff"/>
+    <path d="M68 18l8 45 32-33-23 42 44-8-42 23 33 32-45-8-23 42 8-45-42 23 33-32-45 8 42-23-42-23 45 8-33-32 42 23z" fill="#ffffff"/>
+  </g>
+  <text x="145" y="99" fill="#e87420" font-family="Arial, Helvetica, sans-serif" font-size="94" font-weight="800">care</text>
+</svg>

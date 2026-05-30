@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 190" role="img" aria-label="ICRC logo">
+  <rect width="360" height="190" fill="#ffffff"/>
+  <circle cx="180" cy="62" r="34" fill="#ffffff" stroke="#222222" stroke-width="3"/>
+  <path d="M172 42h16v14h14v16h-14v14h-16V72h-14V56h14z" fill="#d71920"/>
+  <text x="180" y="35" text-anchor="middle" fill="#222222" font-family="Arial, Helvetica, sans-serif" font-size="12">COMITE INTERNATIONAL</text>
+  <text x="180" y="98" text-anchor="middle" fill="#222222" font-family="Arial, Helvetica, sans-serif" font-size="12">GENEVE</text>
+  <text x="180" y="158" text-anchor="middle" fill="#111111" font-family="Arial, Helvetica, sans-serif" font-size="58" font-weight="500">ICRC</text>
+</svg>

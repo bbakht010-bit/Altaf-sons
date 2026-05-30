@@ -41,56 +41,123 @@ export const stats = [
 
 export const partners = [
   {
+    name: "UNICEF",
+    shortName: "UNICEF",
+    type: "Children, relief, development",
+    logoSrc: "/partners/unicef.png",
+    group: "un",
+    keywords: ["UN", "Relief", "Children"],
+  },
+  {
+    name: "UNHCR",
+    shortName: "UNHCR",
+    type: "Refugee response and protection",
+    logoSrc: "/partners/unhcr.svg",
+    group: "un",
+    keywords: ["UN", "Refugees", "Aid"],
+  },
+  {
+    name: "UNDP",
+    shortName: "UNDP",
+    type: "Development programs",
+    logoSrc: "/partners/undp.svg",
+    group: "un",
+    keywords: ["UN", "Development", "Projects"],
+  },
+  {
     name: "HANDS",
     shortName: "HANDS",
-    type: "Humanitarian and development support organization",
+    type: "Humanitarian and development support",
     logoSrc: "/partners/hands.svg",
+    group: "other",
+    keywords: ["NGO", "Relief", "Community"],
   },
   {
     name: "ACTED",
     shortName: "ACTED",
-    type: "International humanitarian and development organization",
+    type: "Humanitarian and development programs",
     logoSrc: "/partners/acted.svg",
+    group: "other",
+    keywords: ["INGO", "Relief", "Development"],
   },
   {
-    name: "UNICEF",
-    shortName: "UNICEF",
-    type: "United Nations child-focused humanitarian and development agency",
-    logoSrc: "/partners/unicef.png",
+    name: "Muslim Aid",
+    shortName: "Muslim Aid",
+    type: "Humanitarian aid and relief",
+    logoSrc: "/partners/muslim-aid.svg",
+    group: "other",
+    keywords: ["Relief", "Humanity", "Aid"],
+  },
+  {
+    name: "CARE",
+    shortName: "CARE",
+    type: "Humanitarian response and development",
+    logoSrc: "/partners/care.svg",
+    group: "other",
+    keywords: ["Relief", "Development", "Support"],
+  },
+  {
+    name: "Islamic Relief",
+    shortName: "Islamic Relief",
+    type: "Relief and humanitarian programs",
+    logoSrc: "/partners/islamic-relief.svg",
+    group: "other",
+    keywords: ["Relief", "Aid", "Programs"],
+  },
+  {
+    name: "ICRC",
+    shortName: "ICRC",
+    type: "Humanitarian response",
+    logoSrc: "/partners/icrc.svg",
+    group: "other",
+    keywords: ["Humanitarian", "Response", "Aid"],
   },
   {
     name: "National Disaster Management Authority",
     shortName: "NDMA",
-    type: "Disaster management and relief support",
+    type: "Disaster management and relief",
     logoSrc: "/partners/ndma.png",
+    group: "other",
+    keywords: ["Disaster", "Relief", "Govt"],
   },
-  { name: "DGP Army / Pakistan Army", shortName: "Army", type: "Institutional procurement and supply needs" },
-  { name: "Government Departments", shortName: "Govt", type: "General order supply and project procurement" },
+  {
+    name: "DGP Army / Pakistan Army",
+    shortName: "Army",
+    type: "Institutional procurement",
+    group: "other",
+    keywords: ["Institutional", "Supply", "Delivery"],
+  },
+  {
+    name: "Government Departments",
+    shortName: "Govt",
+    type: "General order supply",
+    group: "other",
+    keywords: ["Govt", "Procurement", "Supply"],
+  },
 ];
+
+export const unPartners = partners.filter((partner) => partner.group === "un");
+export const otherPartners = partners.filter((partner) => partner.group === "other");
 
 export const services = [
   {
     title: "Humanitarian Aid & Relief Items",
-    summary:
-      "Procurement and delivery support for urgent relief programs, disaster response, and humanitarian field operations.",
+    summary: "Relief items, emergency response, and field supply.",
     details: ["Tents and shelter items", "Blankets and bedding", "Food packs", "Medical kits", "Hygiene kits"],
   },
   {
     title: "Textiles & Uniforms",
-    summary:
-      "Sourcing and supply of textile products for institutional, field, and program requirements.",
+    summary: "Uniforms, bedding, protective clothing, and custom textile orders.",
     details: ["Uniforms", "Protective clothing", "Bedding textiles", "Fabric-based relief items", "Custom bulk orders"],
   },
   {
     title: "Stationery & Office Supplies",
-    summary:
-      "Reliable general office and program stationery supplies for NGOs, government offices, and project teams.",
+    summary: "Office, school, training, and project stationery supplies.",
     details: ["Office stationery", "School and training materials", "Printing support", "Files and record supplies", "Bulk office packs"],
   },
   {
     title: "General Order Supplies",
-    summary:
-      "Broad procurement support for daily operational, administrative, and field project needs.",
+    summary: "Furniture, hardware, cleaning materials, and project-specific sourcing.",
     details: ["Furniture", "Hardware", "Cleaning materials", "Operational supplies", "Project-specific sourcing"],
   },
 ];
@@ -115,11 +182,11 @@ export const values = [
 ];
 
 export const whyChoose = [
-  "Government, UN, and humanitarian procurement experience",
-  "Reliable procurement and sourcing",
-  "Timely delivery across Pakistan",
-  "Quality assurance",
-  "Competitive and transparent pricing",
+  "UN and NGO experience",
+  "Reliable sourcing",
+  "Pakistan-wide delivery",
+  "Quality checks",
+  "Transparent pricing",
 ];
 
 export const sectors = [

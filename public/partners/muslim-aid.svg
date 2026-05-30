@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 150" role="img" aria-label="Muslim Aid logo">
+  <rect width="520" height="150" fill="#ffffff"/>
+  <path d="M91 25c35 40 40 75 11 95-24 17-61 4-68-26-5-23 14-48 57-69z" fill="url(#g)"/>
+  <path d="M22 105c27 22 65 21 100-3-24 35-78 44-113 17z" fill="#6ee000"/>
+  <text x="145" y="74" fill="#111111" font-family="Arial, Helvetica, sans-serif" font-size="50" font-weight="800">Muslim Aid</text>
+  <text x="197" y="112" fill="#111111" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700">Serving Humanity</text>
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#70ef11"/>
+      <stop offset=".65" stop-color="#62d800"/>
+      <stop offset="1" stop-color="#111111"/>
+    </linearGradient>
+  </defs>
+</svg>

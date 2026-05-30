@@ -3,7 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import CTA from "../components/CTA.astro";
 import SectionHeading from "../components/SectionHeading.astro";
 import ServiceCard from "../components/ServiceCard.astro";
-import { hero, partners, projects, services, site, stats, whyChoose } from "../data/site";
+import { hero, otherPartners, projects, services, site, stats, unPartners, whyChoose } from "../data/site";
 ---
 
 <BaseLayout
@@ -43,19 +43,12 @@ import { hero, partners, projects, services, site, stats, whyChoose } from "../d
 
   <section class="trust-bar" aria-label="Trusted by partner organizations">
     <div class="container trust-inner">
-      <p>Trusted procurement support for humanitarian and institutional clients</p>
-      <div class="logo-grid trust-logo-grid">
-        {
-          partners
-            .filter((partner) => partner.logoSrc)
-            .slice(0, 4)
-            .map((partner) => (
-              <div class="logo-card with-logo">
-                <img class="partner-logo" src={partner.logoSrc} alt={`${partner.name} logo`} />
-                <strong>{partner.name}</strong>
-              </div>
-            ))
-        }
+      <p>Trusted support for relief, development, and institutional procurement.</p>
+      <div class="keyword-strip">
+        <span>UN agencies</span>
+        <span>NGOs</span>
+        <span>Government</span>
+        <span>Relief supply</span>
       </div>
     </div>
   </section>
@@ -80,11 +73,15 @@ import { hero, partners, projects, services, site, stats, whyChoose } from "../d
         title="Reliable procurement and timely delivery from Jhang Saddar, Punjab."
         body={`${site.name} is a procurement and supply company specializing in humanitarian aid, relief items, textiles, stationery, and general order supplies for NGOs, international firms, government agencies, and institutional clients.`}
       />
-      <div class="prose-card">
-        <p>
-          We work with humanitarian aid companies, NGOs, international firms, and government agencies that rely on clear
-          sourcing, practical availability checks, and timely delivery for their projects across Pakistan.
-        </p>
+      <div class="keyword-panel">
+        <span>Procurement</span>
+        <span>Sourcing</span>
+        <span>Relief items</span>
+        <span>Textiles</span>
+        <span>Stationery</span>
+        <span>General supplies</span>
+        <span>Timely delivery</span>
+        <span>Pakistan-wide support</span>
       </div>
     </div>
   </section>
@@ -106,19 +103,38 @@ import { hero, partners, projects, services, site, stats, whyChoose } from "../d
     <div class="container">
       <SectionHeading
         eyebrow="Esteemed partners and clients"
-        title="Built for formal procurement environments."
-        body="Selected humanitarian, development, disaster management, and institutional environments connected with our procurement work."
+        title="Clear partner display, grouped for quick trust."
+        body="UN-affiliated agencies are separated from other humanitarian, disaster management, and institutional partners."
       />
-      <div class="logo-grid">
-        {
-          partners.map((partner) => (
-            <article class={`logo-card${partner.logoSrc ? " with-logo" : ""}`}>
-              {partner.logoSrc ? <img class="partner-logo" src={partner.logoSrc} alt={`${partner.name} logo`} /> : <span class="logo-mark">{partner.shortName}</span>}
-              <h3>{partner.name}</h3>
-              <small>{partner.type}</small>
-            </article>
-          ))
-        }
+      <div class="partner-groups">
+        <section class="partner-group-card">
+          <p class="eyebrow">UN-affiliated</p>
+          <div class="mini-logo-grid">
+            {
+              unPartners.map((partner) => (
+                <article class="logo-card with-logo compact-logo-card">
+                  <img class="partner-logo" src={partner.logoSrc} alt={`${partner.name} logo`} />
+                  <h3>{partner.name}</h3>
+                  <div class="tag-row">{partner.keywords.map((keyword) => <span>{keyword}</span>)}</div>
+                </article>
+              ))
+            }
+          </div>
+        </section>
+        <section class="partner-group-card">
+          <p class="eyebrow">Humanitarian / government</p>
+          <div class="mini-logo-grid">
+            {
+              otherPartners.map((partner) => (
+                <article class={`logo-card compact-logo-card${partner.logoSrc ? " with-logo" : ""}`}>
+                  {partner.logoSrc ? <img class="partner-logo" src={partner.logoSrc} alt={`${partner.name} logo`} /> : <span class="logo-mark">{partner.shortName}</span>}
+                  <h3>{partner.name}</h3>
+                  <div class="tag-row">{partner.keywords.map((keyword) => <span>{keyword}</span>)}</div>
+                </article>
+              ))
+            }
+          </div>
+        </section>
       </div>
     </div>
   </section>

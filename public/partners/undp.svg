@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 170" role="img" aria-label="UNDP logo">
+  <rect width="440" height="170" fill="#ffffff"/>
+  <g fill="#1f6db2">
+    <rect x="38" y="28" width="126" height="126"/>
+    <rect x="174" y="28" width="94" height="58"/>
+    <rect x="278" y="28" width="94" height="58"/>
+    <rect x="174" y="96" width="94" height="58"/>
+    <rect x="278" y="96" width="94" height="58"/>
+  </g>
+  <g fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="55" font-weight="800">
+    <text x="191" y="76">U</text>
+    <text x="296" y="76">N</text>
+    <text x="191" y="144">D</text>
+    <text x="299" y="144">P</text>
+  </g>
+  <circle cx="101" cy="91" r="32" fill="none" stroke="#ffffff" stroke-width="5"/>
+  <path d="M78 91h46M101 59c10 14 10 50 0 64M101 59c-10 14-10 50 0 64" fill="none" stroke="#ffffff" stroke-width="4"/>
+</svg>
