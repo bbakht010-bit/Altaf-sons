@@ -1,0 +1,22 @@
+---
+interface Props {
+  title?: string;
+  body?: string;
+}
+
+const {
+  title = "Need reliable procurement support for your next project?",
+  body = "Send your product list, quantities, location, and deadline. Altaf & Sons will review the requirement and respond through official company channels.",
+} = Astro.props;
+---
+
+<section class="cta-band">
+  <div class="container cta-inner">
+    <div>
+      <p class="eyebrow">Start a request</p>
+      <h2>{title}</h2>
+      <p>{body}</p>
+    </div>
+    <a class="button primary" href="/contact/">Request a Quote</a>
+  </div>
+</section>

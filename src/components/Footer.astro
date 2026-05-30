@@ -1,0 +1,48 @@
+---
+import { contact, site } from "../data/site";
+---
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <a class="brand footer-brand" href="/" aria-label={`${site.name} home`}>
+        <span class="brand-mark" aria-hidden="true">A&S</span>
+        <span>
+          <strong>{site.name}</strong>
+          <small>{site.tagline}</small>
+        </span>
+      </a>
+      <p>{site.shortDescription}</p>
+    </div>
+
+    <div>
+      <h2>Company</h2>
+      <ul>
+        {
+          site.nav.map((item) => (
+            <li>
+              <a href={item.href}>{item.label}</a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+
+    <div>
+      <h2>Contact</h2>
+      <ul>
+        {
+          contact.methods.map((method) => (
+            <li>
+              <a href={method.href}>{method.value}</a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span>&copy; {new Date().getFullYear()} {site.name}. All rights reserved.</span>
+    <span>Procurement, sourcing, and timely delivery.</span>
+  </div>
+</footer>

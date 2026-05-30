@@ -1,0 +1,54 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import CTA from "../components/CTA.astro";
+import PageHero from "../components/PageHero.astro";
+import SectionHeading from "../components/SectionHeading.astro";
+import { galleryItems } from "../data/site";
+---
+
+<BaseLayout
+  title="Gallery"
+  description="Project gallery placeholders for Altaf & Sons supplies, relief items, warehouse preparation, dispatch, and delivery handover photos."
+>
+  <PageHero
+    eyebrow="Projects gallery"
+    title="A visual space for approved supply and delivery photos."
+    body="Use this page to showcase warehouse preparation, relief item packing, textile orders, general supplies, and field delivery handovers after approved images are provided."
+  />
+
+  <section class="section">
+    <div class="container">
+      <SectionHeading
+        eyebrow="Photo gallery"
+        title="Image placeholders ready for your project photos."
+        body="Each card can be replaced with a real photo later. The current prototype keeps the page polished without using unapproved imagery."
+      />
+      <div class="gallery-grid">
+        {
+          galleryItems.map((item, index) => (
+            <a class="gallery-card" href={`#gallery-${index + 1}`}>
+              <div class="image-placeholder">Photo {index + 1}</div>
+              <div>
+                <small>{item.category}</small>
+                <h3>{item.title}</h3>
+              </div>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section muted">
+    <div class="container statement-card">
+      <p class="eyebrow">Image guidance</p>
+      <h2>Use only approved, high-quality company photos.</h2>
+      <p>
+        Best images include warehouse shelves, packed relief kits, delivery vehicles, handover moments, stationery
+        supplies, uniforms, textiles, and organized product displays.
+      </p>
+    </div>
+  </section>
+
+  <CTA title="Have gallery photos ready?" body="Send approved photos with short captions, project category, and whether client names may be shown." />
+</BaseLayout>

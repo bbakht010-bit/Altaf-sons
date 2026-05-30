@@ -1,0 +1,24 @@
+---
+interface Props {
+  title: string;
+  summary: string;
+  details?: string[];
+}
+
+const { title, summary, details = [] } = Astro.props;
+---
+
+<article class="service-card">
+  <div class="card-icon" aria-hidden="true"></div>
+  <h3>{title}</h3>
+  <p>{summary}</p>
+  {
+    details.length > 0 && (
+      <ul class="check-list">
+        {details.map((detail) => (
+          <li>{detail}</li>
+        ))}
+      </ul>
+    )
+  }
+</article>

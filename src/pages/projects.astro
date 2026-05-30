@@ -1,0 +1,70 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import CTA from "../components/CTA.astro";
+import PageHero from "../components/PageHero.astro";
+import SectionHeading from "../components/SectionHeading.astro";
+import { projects, sectors } from "../data/site";
+---
+
+<BaseLayout
+  title="Projects"
+  description="View Altaf & Sons project and impact profiles for humanitarian procurement, general supplies, textiles, and delivery coordination."
+>
+  <PageHero
+    eyebrow="Projects and experience"
+    title="Project profiles for supply, procurement, and delivery work."
+    body="These visual cards are ready for approved photos, contract references, delivery records, and final project descriptions."
+  />
+
+  <section class="section">
+    <div class="container">
+      <SectionHeading
+        eyebrow="Representative work"
+        title="Impact cards for the first visual prototype."
+        body="The layout is designed to showcase humanitarian relief goods, institutional supplies, textile orders, and field delivery coordination."
+      />
+      <div class="impact-grid">
+        {
+          projects.map((project) => (
+            <article class="placeholder-card">
+              <div class="image-placeholder">Project photo pending</div>
+              <div>
+                <small>{project.client}</small>
+                <h3>{project.title}</h3>
+                <p>{project.summary}</p>
+              </div>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section muted">
+    <div class="container split-grid">
+      <div>
+        <SectionHeading
+          eyebrow="Supported environments"
+          title="Prepared for structured procurement and aid-sector coordination."
+          body="Project records can be organized by client type, supply category, location, year, and delivery scope once final details are provided."
+        />
+      </div>
+      <div class="sector-panel">
+        {sectors.map((sector) => <span>{sector}</span>)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container statement-card">
+      <p class="eyebrow">Gallery ready</p>
+      <h2>Add approved photos when available.</h2>
+      <p>
+        This page links naturally with the gallery page so clients can review supplies, packing, dispatch, and delivery
+        handover visuals after the company provides approved images.
+      </p>
+    </div>
+  </section>
+
+  <CTA title="Have a project profile to add?" body="Send the project title, client type, services provided, location, timeline, and any approved photos or documents." />
+</BaseLayout>

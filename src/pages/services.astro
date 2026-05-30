@@ -1,0 +1,73 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import CTA from "../components/CTA.astro";
+import PageHero from "../components/PageHero.astro";
+import SectionHeading from "../components/SectionHeading.astro";
+import ServiceCard from "../components/ServiceCard.astro";
+import { process, services } from "../data/site";
+---
+
+<BaseLayout
+  title="Services"
+  description="Explore Altaf & Sons procurement services for humanitarian aid, textiles, stationery, and general order supplies."
+>
+  <PageHero
+    eyebrow="Services and products"
+    title="Procurement categories for relief, office, textile, and general supply needs."
+    body="Altaf & Sons supports project teams with sourcing, quotation support, procurement coordination, and delivery planning across key supply categories."
+  />
+
+  <section class="section">
+    <div class="container">
+      <SectionHeading
+        eyebrow="Capabilities"
+        title="Detailed supply categories ready for final images and specifications."
+        body="Each category includes common sub-items from the brief. Exact product lists, brands, quantities, and documentation can be added before launch."
+      />
+      <div class="card-grid two-column">
+        {services.map((service) => <ServiceCard {...service} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section muted">
+    <div class="container">
+      <SectionHeading
+        eyebrow="Request flow"
+        title="From requirement to handover."
+        body="A clear process helps clients compare options, confirm scope, and receive delivery updates without confusion."
+        align="center"
+      />
+      <div class="timeline">
+        {
+          process.map((item) => (
+            <article>
+              <span>{item.step}</span>
+              <h3>{item.title}</h3>
+              <p>{item.body}</p>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container details-panel">
+      <div>
+        <p class="eyebrow">Future content</p>
+        <h2>Service details to add next</h2>
+      </div>
+      <ul class="check-list columns">
+        <li>Exact product and material categories</li>
+        <li>Approved item photos and product specifications</li>
+        <li>Company registration and supplier documents</li>
+        <li>Standard quotation and delivery timelines</li>
+        <li>Client approval or vendor onboarding requirements</li>
+        <li>Verified project photos, logos, and case studies</li>
+      </ul>
+    </div>
+  </section>
+
+  <CTA />
+</BaseLayout>

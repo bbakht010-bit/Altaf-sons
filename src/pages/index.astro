@@ -1,0 +1,161 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import CTA from "../components/CTA.astro";
+import SectionHeading from "../components/SectionHeading.astro";
+import ServiceCard from "../components/ServiceCard.astro";
+import { hero, partners, projects, services, site, stats, whyChoose } from "../data/site";
+---
+
+<BaseLayout
+  title="Home"
+  description="Altaf & Sons is a Lahore-based general order supplier and humanitarian aid procurement company for relief items, textiles, stationery, and general supplies."
+>
+  <section class="hero-section full-screen">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">{hero.eyebrow}</p>
+        <h1>{hero.title}</h1>
+        <p>{hero.body}</p>
+        <div class="hero-actions">
+          <a class="button primary" href={hero.primaryCta.href}>{hero.primaryCta.label}</a>
+          <a class="button secondary" href={hero.secondaryCta.href}>{hero.secondaryCta.label}</a>
+        </div>
+      </div>
+
+      <div class="hero-card" aria-label="Company capability summary">
+        <div class="hero-card-top">
+          <span>Altaf & Sons</span>
+          <strong>Supply Chain Ready</strong>
+        </div>
+        <ul>
+          <li>Humanitarian aid and relief item procurement</li>
+          <li>Textiles, stationery, and general order supplies</li>
+          <li>Timely delivery for institutional project teams</li>
+        </ul>
+        <div class="trust-strip">
+          <span>Procurement</span>
+          <span>Sourcing</span>
+          <span>Delivery</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="trust-bar" aria-label="Trusted by partner organizations">
+    <div class="container trust-inner">
+      <p>Trusted procurement support for humanitarian and institutional clients</p>
+      <div class="logo-grid">
+        {partners.slice(0, 3).map((partner) => <div class="logo-card"><span class="logo-mark">{partner.shortName}</span><strong>{partner.name}</strong></div>)}
+      </div>
+    </div>
+  </section>
+
+  <section class="stats-section">
+    <div class="container stats-grid">
+      {
+        stats.map((stat) => (
+          <div class="stat-card">
+            <strong>{stat.value}</strong>
+            <span>{stat.label}</span>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container split-grid">
+      <SectionHeading
+        eyebrow="About us"
+        title="Reliable procurement and timely delivery from Lahore, Pakistan."
+        body={`${site.name} specializes in sourcing, procurement, and delivery of humanitarian aid, relief items, textiles, stationery, and general order supplies for NGOs, international firms, government agencies, and institutional clients.`}
+      />
+      <div class="prose-card">
+        <p>
+          The company supports project teams that need organized sourcing, practical availability checks, and clear
+          delivery coordination. This prototype is ready for final images, approved logos, certifications, and office
+          details when you provide them.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section muted">
+    <div class="container">
+      <SectionHeading
+        eyebrow="Our expertise"
+        title="Supplies for humanitarian, government, and institutional needs."
+        body="Each category is structured so exact products, photos, quantities, and supplier documentation can be added later."
+      />
+      <div class="card-grid two-column">
+        {services.map((service) => <ServiceCard {...service} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <SectionHeading
+        eyebrow="Esteemed partners and clients"
+        title="Built for formal procurement environments."
+        body="Official logo files can replace these professional text cards before launch."
+      />
+      <div class="logo-grid">
+        {
+          partners.map((partner) => (
+            <article class="logo-card">
+              <span class="logo-mark">{partner.shortName}</span>
+              <h3>{partner.name}</h3>
+              <small>{partner.type}</small>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section muted">
+    <div class="container">
+      <SectionHeading
+        eyebrow="Why choose Altaf & Sons"
+        title="Professional supply support for projects where timing matters."
+      />
+      <div class="why-grid">
+        {
+          whyChoose.map((reason, index) => (
+            <article class="why-card">
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              <h3>{reason}</h3>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <SectionHeading
+        eyebrow="Recent projects and impact"
+        title="A gallery-ready section for supply and delivery work."
+        body="Photos can be added to these cards when the company provides approved project images."
+      />
+      <div class="impact-grid">
+        {
+          projects.slice(0, 3).map((project) => (
+            <article class="placeholder-card">
+              <div class="image-placeholder">Image pending</div>
+              <div>
+                <small>{project.client}</small>
+                <h3>{project.title}</h3>
+                <p>{project.summary}</p>
+              </div>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <CTA />
+</BaseLayout>

@@ -1,0 +1,103 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import CTA from "../components/CTA.astro";
+import PageHero from "../components/PageHero.astro";
+import SectionHeading from "../components/SectionHeading.astro";
+import { leadership, site, values } from "../data/site";
+---
+
+<BaseLayout
+  title="About"
+  description="Learn about Altaf & Sons, a Lahore-based procurement and general order supplier serving humanitarian, government, and institutional clients."
+>
+  <PageHero
+    eyebrow="About Altaf & Sons"
+    title="A Lahore-based procurement company built for dependable delivery."
+    body="Altaf & Sons specializes in humanitarian aid procurement, general order supplies, textiles, stationery, and timely delivery support for formal project environments."
+  />
+
+  <section class="section">
+    <div class="container split-grid">
+      <div>
+        <SectionHeading
+          eyebrow="Company profile"
+          title="Reliable sourcing and supply support for organizations that cannot afford delays."
+          body="The company works with humanitarian aid companies, NGOs, international firms, government agencies, and institutional clients that need structured procurement and clear delivery coordination."
+        />
+      </div>
+      <div class="prose-card">
+        <p>
+          {site.name} is a general order supplier and humanitarian aid procurement company based in {site.location}.
+          Its work covers sourcing, procurement, supply coordination, and timely delivery of relief items, textiles,
+          stationery, and operational goods for project teams across Pakistan.
+        </p>
+        <p>
+          The site is structured to build trust with government, international, and humanitarian clients through clear
+          service categories, partner visibility, professional documentation language, and a direct quote request flow.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section muted">
+    <div class="container mission-grid">
+      <article class="mission-card">
+        <p class="eyebrow">Mission</p>
+        <h2>Deliver dependable procurement support for essential programs.</h2>
+        <p>
+          To help organizations source and receive the supplies they need with professionalism, transparency, and
+          practical delivery planning.
+        </p>
+      </article>
+      <article class="mission-card">
+        <p class="eyebrow">Vision</p>
+        <h2>Become a trusted supplier for humanitarian and institutional work.</h2>
+        <p>
+          To be recognized for reliable procurement, quality-focused sourcing, and timely delivery across Pakistan.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <SectionHeading
+        eyebrow="Leadership"
+        title="A role-based leadership structure for client confidence."
+        body="No individual personal contact numbers are shown publicly. Final approved names and photos can be added later if the company wants them published."
+      />
+      <div class="leader-grid">
+        {
+          leadership.map((member) => (
+            <article class="leader-card">
+              <div class="image-placeholder">Photo pending</div>
+              <h3>{member.role}</h3>
+              <p>{member.body}</p>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section muted">
+    <div class="container">
+      <SectionHeading
+        eyebrow="Our values"
+        title="Quality, reliability, timeliness, and transparency."
+      />
+      <div class="card-grid two-column">
+        {
+          values.map((value) => (
+            <article class="value-card">
+              <h3>{value.title}</h3>
+              <p>{value.body}</p>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <CTA />
+</BaseLayout>

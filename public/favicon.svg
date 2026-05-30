@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title>Altaf and Sons</title>
+  <rect width="64" height="64" rx="16" fill="#164c63" />
+  <path d="M18 45 31 17h4l13 28h-7l-2.6-6H27.7l-2.6 6h-7.1Zm12-12h6.2L33 25.5 30 33Z" fill="#ffffff" />
+  <path d="M18 51h28" stroke="#2f7d64" stroke-width="4" stroke-linecap="round" />
+</svg>

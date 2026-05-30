@@ -1,0 +1,52 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import CTA from "../components/CTA.astro";
+import PageHero from "../components/PageHero.astro";
+import SectionHeading from "../components/SectionHeading.astro";
+import { partners } from "../data/site";
+---
+
+<BaseLayout
+  title="Partners"
+  description="View Altaf & Sons partner and client categories including United Nations agencies, NDMA, Pakistan Army, humanitarian organizations, and government departments."
+>
+  <PageHero
+    eyebrow="Partners and clients"
+    title="Trusted by formal procurement and humanitarian environments."
+    body="This page is designed for official partner logos, client names, and procurement credibility signals once approved files are available."
+  />
+
+  <section class="section">
+    <div class="container">
+      <SectionHeading
+        eyebrow="Esteemed partners"
+        title="Professional display for approved client and partner names."
+        body="Official logo files can replace these text-based logo cards before final publication."
+      />
+      <div class="logo-grid">
+        {
+          partners.map((partner) => (
+            <article class="logo-card">
+              <span class="logo-mark">{partner.shortName}</span>
+              <h3>{partner.name}</h3>
+              <small>{partner.type}</small>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section muted">
+    <div class="container statement-card">
+      <p class="eyebrow">Trust-building assets</p>
+      <h2>What to add before launch.</h2>
+      <p>
+        Add approved logos, supplier registration documents, certifications, project references, and any permissions
+        required to display client names publicly.
+      </p>
+    </div>
+  </section>
+
+  <CTA />
+</BaseLayout>
