@@ -27,7 +27,11 @@ import { contact, site } from "../data/site";
         <div class="contact-methods">
           {
             contact.methods.map((method) => (
-              <a href={method.href}>
+              <a
+                href={method.href}
+                target={method.href.startsWith("http") ? "_blank" : undefined}
+                rel={method.href.startsWith("http") ? "noopener noreferrer" : undefined}
+              >
                 <span>{method.label}</span>
                 <strong>{method.value}</strong>
               </a>
@@ -64,13 +68,13 @@ import { contact, site } from "../data/site";
           <textarea
             name="message"
             rows="6"
-            placeholder="Example: 500 hygiene kits, Lahore delivery, needed by 15 June."
+            placeholder="Example: 500 hygiene kits, Jhang Saddar delivery, needed by 15 June."
             required></textarea>
         </label>
         <button class="button primary" type="submit">Send Quote Request</button>
         <p class="form-note">
-          Your request opens your email app and is addressed to {site.email}. WhatsApp can be connected as soon as the
-          official business number is provided.
+          Your request opens your email app and is addressed to {site.email}. For faster response, use the WhatsApp
+          button on this page.
         </p>
       </form>
     </div>
@@ -81,8 +85,8 @@ import { contact, site } from "../data/site";
       <div>
         <SectionHeading
           eyebrow="Office location"
-          title="Based in Lahore, Pakistan"
-          body="Add the complete office address or Google Maps link here when it is approved for public display."
+          title="Based in Jhang Saddar, Punjab, Pakistan"
+          body={site.address}
         />
         <div class="domain-list">
           <span>altafandsons.com</span>
@@ -92,8 +96,8 @@ import { contact, site } from "../data/site";
       </div>
       <div class="map-placeholder">
         <div>
-          <h3>Lahore Service Base</h3>
-          <p>Share the approved office address or Google Maps link when you want the public map added.</p>
+          <h3>Jhang Saddar Service Base</h3>
+          <p>Google Map embed can be added once the exact office map link is provided.</p>
         </div>
       </div>
     </div>

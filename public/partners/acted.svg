@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 150" role="img" aria-label="ACTED logo">
+  <rect width="460" height="150" fill="#ffffff"/>
+  <g fill="none" stroke="#140c64" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="72" cy="75" r="48" fill="#140c64" stroke="none"/>
+    <path d="M44 45 L104 74 L44 105 Z" stroke="#ffffff"/>
+    <path d="M52 50 L92 98" stroke="#ffffff"/>
+    <path d="M96 52 L52 100" stroke="#ffffff"/>
+  </g>
+  <text x="140" y="96" fill="#140c64" font-family="Arial, Helvetica, sans-serif" font-size="70" font-weight="700" letter-spacing="2">acted</text>
+</svg>

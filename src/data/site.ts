@@ -3,45 +3,69 @@ export const site = {
   tagline: "Reliable Procurement & Timely Delivery for Humanitarian Aid & General Supplies",
   logoSrc: "/altaf-and-sons-logo-clean.png",
   shortDescription:
-    "A Lahore-based general order supplier and humanitarian aid procurement company serving NGOs, international firms, government departments, and institutional project teams.",
+    "A Jhang Saddar-based general order supplier and humanitarian aid procurement company serving NGOs, international firms, government departments, and institutional project teams.",
   url: "https://altaf-and-sons.pages.dev",
   email: "altafsons97@gmail.com",
-  businessPhone: "",
+  businessPhone: "+92 333 6734597",
   whatsappLabel: "WhatsApp",
-  whatsappHref: "/contact/",
-  location: "Lahore, Pakistan",
-  address: "Lahore, Pakistan - complete office address to be added",
+  whatsappHref:
+    "https://wa.me/923336734597?text=Hello%20Altaf%20%26%20Sons%2C%20I%20would%20like%20to%20request%20a%20quote.",
+  location: "Jhang Saddar, Punjab, Pakistan",
+  address: "Jhang Saddar, Punjab, Pakistan",
   analyticsId: "",
   nav: [
     { label: "Home", href: "/" },
+    { label: "About", href: "/about/" },
     { label: "Services", href: "/services/" },
+    { label: "Partners", href: "/partners/" },
     { label: "Projects", href: "/projects/" },
+    { label: "Gallery", href: "/gallery/" },
     { label: "Contact", href: "/contact/" },
   ],
 };
 
 export const hero = {
   eyebrow: "General order supplier and humanitarian aid procurement company",
-  title: "Procurement made simple for serious supply needs.",
+  title: "Reliable Partner in Humanitarian Aid & General Order Supplies",
   body:
-    "Altaf & Sons helps organizations source, quote, and deliver humanitarian aid items, textiles, stationery, and general order supplies across Pakistan.",
+    "Procurement, sourcing, and timely delivery for UN agencies, NDMA, Pakistan Army, humanitarian organizations, government departments, and institutional clients.",
   primaryCta: { label: "Request a Quote", href: "/contact/" },
-  secondaryCta: { label: "View Services", href: "/services/" },
+  secondaryCta: { label: "Explore Our Supplies", href: "/services/" },
 };
 
 export const stats = [
-  { value: "Lahore", label: "based procurement team" },
+  { value: "Jhang Saddar", label: "based procurement team" },
   { value: "Nationwide", label: "sourcing and delivery support" },
   { value: "Aid ready", label: "relief and general supply focus" },
 ];
 
 export const partners = [
-  { name: "United Nations Agencies", shortName: "UN", type: "International humanitarian and development programs" },
-  { name: "National Disaster Management Authority", shortName: "NDMA", type: "Disaster management and relief support" },
+  {
+    name: "HANDS",
+    shortName: "HANDS",
+    type: "Humanitarian and development support organization",
+    logoSrc: "/partners/hands.svg",
+  },
+  {
+    name: "ACTED",
+    shortName: "ACTED",
+    type: "International humanitarian and development organization",
+    logoSrc: "/partners/acted.svg",
+  },
+  {
+    name: "UNICEF",
+    shortName: "UNICEF",
+    type: "United Nations child-focused humanitarian and development agency",
+    logoSrc: "/partners/unicef.png",
+  },
+  {
+    name: "National Disaster Management Authority",
+    shortName: "NDMA",
+    type: "Disaster management and relief support",
+    logoSrc: "/partners/ndma.png",
+  },
   { name: "DGP Army / Pakistan Army", shortName: "Army", type: "Institutional procurement and supply needs" },
-  { name: "Humanitarian Aid Organizations", shortName: "NGO", type: "Relief, health, hygiene, and community programs" },
   { name: "Government Departments", shortName: "Govt", type: "General order supply and project procurement" },
-  { name: "International Firms", shortName: "Intl", type: "Procurement and delivery support for Pakistan operations" },
 ];
 
 export const services = [
@@ -91,10 +115,10 @@ export const values = [
 ];
 
 export const whyChoose = [
-  "Government and humanitarian procurement experience",
-  "Reliable sourcing across multiple supply categories",
-  "Timely delivery support across Pakistan",
-  "Quality assurance for bulk and project-based orders",
+  "Government, UN, and humanitarian procurement experience",
+  "Reliable procurement and sourcing",
+  "Timely delivery across Pakistan",
+  "Quality assurance",
   "Competitive and transparent pricing",
 ];
 
@@ -127,15 +151,24 @@ export const process = [
 
 export const leadership = [
   {
+    name: "Imran Ahmed",
     role: "Chief Executive Officer",
+    phone: "+92 333 6734597",
+    phoneHref: "tel:+923336734597",
     body: "Leads company direction, client confidence, and long-term procurement relationships.",
   },
   {
+    name: "Farhan Ahmed",
     role: "Managing Director",
+    phone: "+92 308 7808807",
+    phoneHref: "tel:+923087808807",
     body: "Oversees business development, client coordination, and project delivery standards.",
   },
   {
-    role: "Operations Lead",
+    name: "Hussain Sheikh",
+    role: "Managing Director and Operations",
+    phone: "",
+    phoneHref: "",
     body: "Supports sourcing, supplier coordination, logistics follow-up, and field execution.",
   },
 ];
@@ -181,6 +214,8 @@ export const contact = {
     "Share your product list, quantities, delivery city, and deadline. Altaf & Sons will respond through official company channels.",
   methods: [
     { label: "Official Email", value: site.email, href: `mailto:${site.email}` },
-    { label: "Office Location", value: site.location, href: "/contact/" },
+    { label: "WhatsApp / CEO", value: "+92 333 6734597", href: site.whatsappHref },
+    { label: "Managing Director", value: "+92 308 7808807", href: "tel:+923087808807" },
+    { label: "Office Location", value: site.address, href: "/contact/" },
   ],
 };

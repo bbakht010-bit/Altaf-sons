@@ -8,11 +8,11 @@ import { leadership, site, values } from "../data/site";
 
 <BaseLayout
   title="About"
-  description="Learn about Altaf & Sons, a Lahore-based procurement and general order supplier serving humanitarian, government, and institutional clients."
+  description="Learn about Altaf & Sons, a Jhang Saddar-based procurement and general order supplier serving humanitarian, government, and institutional clients."
 >
   <PageHero
     eyebrow="About Altaf & Sons"
-    title="A Lahore-based procurement company built for dependable delivery."
+    title="A Jhang Saddar-based procurement company built for dependable delivery."
     body="Altaf & Sons specializes in humanitarian aid procurement, general order supplies, textiles, stationery, and timely delivery support for formal project environments."
   />
 
@@ -63,16 +63,18 @@ import { leadership, site, values } from "../data/site";
     <div class="container">
       <SectionHeading
         eyebrow="Leadership"
-        title="A role-based leadership structure for client confidence."
-        body="Company leadership can be presented with approved names and photos when the business wants them shown publicly."
+        title="Direct leadership for procurement confidence."
+        body="Clients can contact company leadership for official procurement, quotation, and delivery coordination."
       />
       <div class="leader-grid">
         {
           leadership.map((member) => (
             <article class="leader-card">
               <img class="leader-logo" src={site.logoSrc} alt="" aria-hidden="true" />
-              <h3>{member.role}</h3>
+              <h3>{member.name}</h3>
+              <p class="compact"><strong>{member.role}</strong></p>
               <p>{member.body}</p>
+              {member.phone && <a class="text-link" href={member.phoneHref}>{member.phone}</a>}
             </article>
           ))
         }

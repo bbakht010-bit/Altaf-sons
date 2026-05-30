@@ -8,7 +8,7 @@ import { hero, partners, projects, services, site, stats, whyChoose } from "../d
 
 <BaseLayout
   title="Home"
-  description="Altaf & Sons is a Lahore-based general order supplier and humanitarian aid procurement company for relief items, textiles, stationery, and general supplies."
+  description="Altaf & Sons is a Jhang Saddar-based general order supplier and humanitarian aid procurement company for relief items, textiles, stationery, and general supplies."
 >
   <section class="hero-section full-screen">
     <div class="container hero-grid">
@@ -44,8 +44,18 @@ import { hero, partners, projects, services, site, stats, whyChoose } from "../d
   <section class="trust-bar" aria-label="Trusted by partner organizations">
     <div class="container trust-inner">
       <p>Trusted procurement support for humanitarian and institutional clients</p>
-      <div class="logo-grid">
-        {partners.slice(0, 3).map((partner) => <div class="logo-card"><span class="logo-mark">{partner.shortName}</span><strong>{partner.name}</strong></div>)}
+      <div class="logo-grid trust-logo-grid">
+        {
+          partners
+            .filter((partner) => partner.logoSrc)
+            .slice(0, 4)
+            .map((partner) => (
+              <div class="logo-card with-logo">
+                <img class="partner-logo" src={partner.logoSrc} alt={`${partner.name} logo`} />
+                <strong>{partner.name}</strong>
+              </div>
+            ))
+        }
       </div>
     </div>
   </section>
@@ -67,14 +77,13 @@ import { hero, partners, projects, services, site, stats, whyChoose } from "../d
     <div class="container split-grid">
       <SectionHeading
         eyebrow="About us"
-        title="Reliable procurement and timely delivery from Lahore, Pakistan."
-        body={`${site.name} specializes in sourcing, procurement, and delivery of humanitarian aid, relief items, textiles, stationery, and general order supplies for NGOs, international firms, government agencies, and institutional clients.`}
+        title="Reliable procurement and timely delivery from Jhang Saddar, Punjab."
+        body={`${site.name} is a procurement and supply company specializing in humanitarian aid, relief items, textiles, stationery, and general order supplies for NGOs, international firms, government agencies, and institutional clients.`}
       />
       <div class="prose-card">
         <p>
-          The company supports project teams that need organized sourcing, practical availability checks, and clear
-          delivery coordination. Send the required products, quantities, city, and deadline to receive a practical quote
-          through official company channels.
+          We work with humanitarian aid companies, NGOs, international firms, and government agencies that rely on clear
+          sourcing, practical availability checks, and timely delivery for their projects across Pakistan.
         </p>
       </div>
     </div>
@@ -98,13 +107,13 @@ import { hero, partners, projects, services, site, stats, whyChoose } from "../d
       <SectionHeading
         eyebrow="Esteemed partners and clients"
         title="Built for formal procurement environments."
-        body="Approved agency logos and client permissions can be added here when available."
+        body="Selected humanitarian, development, disaster management, and institutional environments connected with our procurement work."
       />
       <div class="logo-grid">
         {
           partners.map((partner) => (
-            <article class="logo-card">
-              <span class="logo-mark">{partner.shortName}</span>
+            <article class={`logo-card${partner.logoSrc ? " with-logo" : ""}`}>
+              {partner.logoSrc ? <img class="partner-logo" src={partner.logoSrc} alt={`${partner.name} logo`} /> : <span class="logo-mark">{partner.shortName}</span>}
               <h3>{partner.name}</h3>
               <small>{partner.type}</small>
             </article>

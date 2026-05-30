@@ -13,21 +13,21 @@ import { partners } from "../data/site";
   <PageHero
     eyebrow="Partners and clients"
     title="Trusted by formal procurement and humanitarian environments."
-    body="A professional area for approved client names, agency logos, and procurement credibility signals."
+    body="Altaf & Sons supports procurement environments connected with UN agencies, NDMA, Pakistan Army, humanitarian organizations, government departments, and institutional clients."
   />
 
   <section class="section">
     <div class="container">
       <SectionHeading
         eyebrow="Esteemed partners"
-        title="Professional display for approved client and partner names."
-        body="Use only logos and client names that are approved for public display."
+        title="Organizations and sectors we support."
+        body="A clear partner and client display for humanitarian, disaster management, government, and institutional procurement credibility."
       />
       <div class="logo-grid">
         {
           partners.map((partner) => (
-            <article class="logo-card">
-              <span class="logo-mark">{partner.shortName}</span>
+            <article class={`logo-card${partner.logoSrc ? " with-logo" : ""}`}>
+              {partner.logoSrc ? <img class="partner-logo" src={partner.logoSrc} alt={`${partner.name} logo`} /> : <span class="logo-mark">{partner.shortName}</span>}
               <h3>{partner.name}</h3>
               <small>{partner.type}</small>
             </article>
@@ -39,11 +39,11 @@ import { partners } from "../data/site";
 
   <section class="section muted">
     <div class="container statement-card">
-      <p class="eyebrow">Trust-building assets</p>
-      <h2>What to add before launch.</h2>
+      <p class="eyebrow">Trust and documentation</p>
+      <h2>Built for formal procurement requirements.</h2>
       <p>
-        Add approved logos, supplier registration documents, certifications, project references, and any permissions
-        required to display client names publicly.
+        The company can support client review with supplier registration documents, project references, quotations,
+        and delivery coordination details where required.
       </p>
     </div>
   </section>

@@ -34,7 +34,13 @@ import { contact, site } from "../data/site";
         {
           contact.methods.map((method) => (
             <li>
-              <a href={method.href}>{method.value}</a>
+              <a
+                href={method.href}
+                target={method.href.startsWith("http") ? "_blank" : undefined}
+                rel={method.href.startsWith("http") ? "noopener noreferrer" : undefined}
+              >
+                {method.value}
+              </a>
             </li>
           ))
         }
