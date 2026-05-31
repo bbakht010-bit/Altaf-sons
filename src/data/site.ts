@@ -136,9 +136,6 @@ export const partners = [
   },
 ];
 
-export const unPartners = partners.filter((partner) => partner.group === "un");
-export const otherPartners = partners.filter((partner) => partner.group === "other");
-
 export const services = [
   {
     title: "Humanitarian Aid & Relief Items",

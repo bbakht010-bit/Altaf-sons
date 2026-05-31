@@ -998,29 +998,8 @@ button {
   max-height: 58px;
 }
 
-.partner-groups {
-  display: grid;
-  grid-template-columns: 0.85fr 1.35fr;
-  gap: 20px;
-  align-items: start;
-}
-
-.partner-group-card {
-  padding: 22px;
-  border: 1px solid var(--color-line);
-  border-radius: var(--radius-lg);
-  background: rgba(255, 255, 255, 0.86);
-  box-shadow: 0 18px 42px rgba(0, 48, 135, 0.05);
-}
-
-.mini-logo-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 14px;
-}
-
-.partner-group-card:first-child .mini-logo-grid {
-  grid-template-columns: 1fr;
+.partner-sequence {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 .logo-mark {
@@ -1202,7 +1181,6 @@ button {
   .project-grid,
   .timeline,
   .logo-grid,
-  .partner-groups,
   .why-grid,
   .impact-grid,
   .leader-grid,
@@ -1227,9 +1205,8 @@ button {
     justify-content: flex-start;
   }
 
-  .mini-logo-grid,
-  .partner-group-card:first-child .mini-logo-grid {
-    grid-template-columns: 1fr;
+  .partner-sequence {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
@@ -1279,5 +1256,9 @@ button {
   .trust-strip span + span {
     border-top: 1px solid var(--color-line);
     border-left: 0;
+  }
+
+  .partner-sequence {
+    grid-template-columns: 1fr;
   }
 }

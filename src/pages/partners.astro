@@ -3,7 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import CTA from "../components/CTA.astro";
 import PageHero from "../components/PageHero.astro";
 import SectionHeading from "../components/SectionHeading.astro";
-import { otherPartners, unPartners } from "../data/site";
+import { partners } from "../data/site";
 ---
 
 <BaseLayout
@@ -12,8 +12,8 @@ import { otherPartners, unPartners } from "../data/site";
 >
   <PageHero
     eyebrow="Partners and clients"
-    title="Partner logos grouped for quick credibility."
-    body="UN-affiliated agencies on one side. Humanitarian, government, and institutional partners on the other."
+    title="Partner logos in a clean sequence."
+    body="UN-affiliated agencies appear first, followed by humanitarian, disaster management, government, and institutional partners."
   />
 
   <section class="section">
@@ -23,35 +23,16 @@ import { otherPartners, unPartners } from "../data/site";
         title="Simple, visual, and easy to scan."
         body="Short keyword tags keep the page clean while the logos build trust."
       />
-      <div class="partner-groups">
-        <section class="partner-group-card">
-          <p class="eyebrow">UN-affiliated</p>
-          <div class="mini-logo-grid">
-            {
-              unPartners.map((partner) => (
-                <article class="logo-card with-logo compact-logo-card">
-                  <img class="partner-logo" src={partner.logoSrc} alt={`${partner.name} logo`} />
-                  <h3>{partner.name}</h3>
-                  <div class="tag-row">{partner.keywords.map((keyword) => <span>{keyword}</span>)}</div>
-                </article>
-              ))
-            }
-          </div>
-        </section>
-        <section class="partner-group-card">
-          <p class="eyebrow">Humanitarian / government</p>
-          <div class="mini-logo-grid">
-            {
-              otherPartners.map((partner) => (
-                <article class={`logo-card compact-logo-card${partner.logoSrc ? " with-logo" : ""}`}>
-                  {partner.logoSrc ? <img class="partner-logo" src={partner.logoSrc} alt={`${partner.name} logo`} /> : <span class="logo-mark">{partner.shortName}</span>}
-                  <h3>{partner.name}</h3>
-                  <div class="tag-row">{partner.keywords.map((keyword) => <span>{keyword}</span>)}</div>
-                </article>
-              ))
-            }
-          </div>
-        </section>
+      <div class="logo-grid partner-sequence">
+        {
+          partners.map((partner) => (
+            <article class={`logo-card compact-logo-card${partner.logoSrc ? " with-logo" : ""}`}>
+              {partner.logoSrc ? <img class="partner-logo" src={partner.logoSrc} alt={`${partner.name} logo`} /> : <span class="logo-mark">{partner.shortName}</span>}
+              <h3>{partner.name}</h3>
+              <div class="tag-row">{partner.keywords.map((keyword) => <span>{keyword}</span>)}</div>
+            </article>
+          ))
+        }
       </div>
     </div>
   </section>
